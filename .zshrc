@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # Aliases
-alias gitc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias -g dnfi="sudo dnf install"
 alias -g dnfr="sudo dnf remove"
