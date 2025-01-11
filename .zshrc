@@ -117,8 +117,8 @@ alias reloadzsh='source $HOME/.zshrc'
 alias -g b="bat"
 alias -g tt="trash"
 
-alias -g mv="mv --backup=numbered"
-alias -g cp="cp --backup=numbered"
+# alias -g mv="mv --backup=numbered"
+# alias -g cp="cp --backup=numbered"
 
 alias -g v="nvim"
 alias -g vf='nvim $(fzf)'
