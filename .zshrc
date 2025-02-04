@@ -72,7 +72,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf sudo z zsh-autosuggestions)
+plugins=(z git fzf sudo zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -102,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # Aliases
-alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias -g dnfi="sudo dnf install"
 alias -g dnfr="sudo dnf remove"
@@ -117,18 +118,13 @@ alias reloadzsh='source $HOME/.zshrc'
 alias -g b="bat"
 alias -g tt="trash"
 
-# alias -g mv="mv --backup=numbered"
-# alias -g cp="cp --backup=numbered"
-
 alias -g v="nvim"
 alias -g vf='nvim $(fzf)'
 alias -g vu="NVIM_APPNAME=nvim-urizen nvim"
 
-alias -g gedit="gnome-text-editor"
-
-alias bgs="variety --selector"
-alias bgn="variety --next"
-alias bgp="variety --prev"
+alias -g vi="nvim"
+alias -g vim="nvim"
+alias -g nano="nvim"
 
 vv() {
   # Assumes all configs exist in directories named ~/.config/nvim-*
@@ -153,13 +149,16 @@ export PATH=$PATH:$HOME/.local/bin/
 # fuzzy finder
 export FZF_DEFAULT_OPTS="--info=inline --preview '[[ -d {} ]] && echo "" || (bat --color=always {})'"
 export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
-source /usr/share/fzf/shell/key-bindings.zsh
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
 
-precmd() {
-    precmd() {
-        echo
-    }
-}
+# precmd() {
+#     precmd() {
+#         echo
+#     }
+# }
+
 # starship
 eval "$(starship init zsh)"
 
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
