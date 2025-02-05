@@ -6,7 +6,7 @@ return {
     null_ls.setup({
       sources = {
         -- Add djhtml for formatting Django templates
-        null_ls.builtins.formatting.djhtml,
+        null_ls.builtins.formatting.djhtml, --TODO: install djhmtl with pip
       },
     })
   end,
