@@ -103,7 +103,7 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 
 # Aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias -g dnfi="sudo dnf install"
 alias -g dnfr="sudo dnf remove"
