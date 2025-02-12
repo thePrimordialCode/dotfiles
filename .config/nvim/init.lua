@@ -2,4 +2,5 @@
 require("config.lazy")
 require("config.fzf-lua")
 require("config.diagnostics")
-require("config.ls")
+require("config.conform")
+require("config.snippets")

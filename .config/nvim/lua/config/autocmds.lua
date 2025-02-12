@@ -24,3 +24,11 @@ autocmd("FileType", {
   desc = "Disable New Line Comment",
 })
 -- vim.cmd([[autocmd FileType * set formatoptions-=ro]])
+
+-- Format on save
+autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
