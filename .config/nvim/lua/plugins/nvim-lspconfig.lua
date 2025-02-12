@@ -3,9 +3,6 @@ return {
 
   opts = {
     servers = {
-      biome = {
-        require_cwd = true,
-      },
       basedpyright = {
         settings = {
           basedpyright = {
