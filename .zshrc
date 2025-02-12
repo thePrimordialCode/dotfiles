@@ -105,11 +105,6 @@ export EDITOR='nvim'
 # Aliases
 alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias -g dnfi="sudo dnf install"
-alias -g dnfr="sudo dnf remove"
-alias -g dnfu="sudo dnf upgrade"
-alias -g dnfs="sudo dnf search"
-
 alias zc="nvim ~/.zshrc"
 alias tc="nvim ~/.config/tmux/tmux.conf"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
