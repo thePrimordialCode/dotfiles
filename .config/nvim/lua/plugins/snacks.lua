@@ -3,7 +3,7 @@ return {
   priority = 1000,
   lazy = false,
   opts = function()
-    local logo = [[IVONE]]
+    local logo = [[LAZYVIM]]
     local opts = {
       dashboard = {
         preset = {

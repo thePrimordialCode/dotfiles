@@ -51,7 +51,3 @@ require("lazy").setup({
     },
   },
 })
-
-require 'lspconfig'.html.setup {
-  filetypes = { "html", "htmldjango" },
-}
