@@ -7,6 +7,7 @@ return {
       sources = {
         -- Add djhtml for formatting Django templates
         null_ls.builtins.formatting.djhtml, --TODO: install djhmtl with pip
+        null_ls.builtins.formatting.black,
       },
     })
   end,
