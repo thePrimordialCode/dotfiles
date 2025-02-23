@@ -104,6 +104,10 @@ export EDITOR='nvim'
 
 # Aliases
 alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dfs="dot status"
+alias dfa="dot add"
+alias dfc="dot commit"
+alias dfp="dot push"
 
 alias zc="nvim ~/.zshrc"
 alias tc="nvim ~/.config/tmux/tmux.conf"
@@ -131,6 +135,9 @@ vv() {
   # Open Neovim with the selected config
   NVIM_APPNAME=$(basename $config) nvim $@
 }
+
+# Enable autocomplete on alias
+setopt COMPLETE_ALIASES
 
 PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
