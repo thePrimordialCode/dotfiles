@@ -109,6 +109,11 @@ alias dfa="dot add"
 alias dfc="dot commit"
 alias dfp="dot push"
 
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+
 alias zc="nvim ~/.zshrc"
 alias tc="nvim ~/.config/tmux/tmux.conf"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
