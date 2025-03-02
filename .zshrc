@@ -104,10 +104,11 @@ export EDITOR='nvim'
 
 # Aliases
 alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias dfs="dot status"
-alias dfa="dot add"
-alias dfc="dot commit"
-alias dfp="dot push"
+alias dst="dot status"
+alias da="dot add"
+alias daa="dot add --all"
+alias dc="dot commit"
+alias dp="dot push"
 
 alias zc="nvim ~/.zshrc"
 alias tc="nvim ~/.config/tmux/tmux.conf"
