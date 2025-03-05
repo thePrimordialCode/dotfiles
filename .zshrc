@@ -112,6 +112,7 @@ alias dp="dot push"
 
 alias zc="nvim ~/.zshrc"
 alias tc="nvim ~/.config/tmux/tmux.conf"
+alias kc="nvim ~/.config/kitty/kitty.conf"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias reloadzsh='source $HOME/.zshrc'
 
@@ -136,9 +137,6 @@ vv() {
   # Open Neovim with the selected config
   NVIM_APPNAME=$(basename $config) nvim $@
 }
-
-# Enable autocomplete on alias
-setopt COMPLETE_ALIASES
 
 PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
