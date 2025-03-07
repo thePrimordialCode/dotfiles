@@ -72,6 +72,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(z git fzf sudo zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
@@ -103,18 +104,16 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 
 # Aliases
-alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias dst="dot status"
 alias da="dot add"
 alias daa="dot add --all"
 alias dc="dot commit"
 alias dp="dot push"
 
-alias zc="nvim ~/.zshrc"
-alias tc="nvim ~/.config/tmux/tmux.conf"
-alias kc="nvim ~/.config/kitty/kitty.conf"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias reloadzsh='source $HOME/.zshrc'
+alias zrc="nvim ~/.zshrc"
+alias tcf="nvim ~/.config/tmux/tmux.conf"
+alias kcf="nvim ~/.config/kitty/kitty.conf"
 
 alias -g b="bat"
 alias -g tt="trash"
@@ -159,7 +158,8 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 #     }
 # }
 
+source /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # starship
 eval "$(starship init zsh)"
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
