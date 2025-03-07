@@ -73,7 +73,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(z git fzf sudo zsh-autosuggestions)
+plugins=(z git fzf sudo zsh-autosuggestions zsh-autocomplete zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,7 +104,10 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 
 # Aliases
-alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+dot () {
+  git --git-dir=$HOME/.cfg/ --work-tree=$HOME "$@"
+}
+
 alias dst="dot status"
 alias da="dot add"
 alias daa="dot add --all"
@@ -126,24 +129,24 @@ alias -g vi="nvim"
 alias -g vim="nvim"
 alias -g nano="nvim"
 
-vv() {
-  # Assumes all configs exist in directories named ~/.config/nvim-*
-  local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
- 
-  # If I exit fzf without selecting a config, don't open Neovim
-  [[ -z $config ]] && echo "No config selected" && return
- 
-  # Open Neovim with the selected config
-  NVIM_APPNAME=$(basename $config) nvim $@
-}
-
+# vv() {
+#   # Assumes all configs exist in directories named ~/.config/nvim-*
+#   local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
+#
+#   # If I exit fzf without selecting a config, don't open Neovim
+#   [[ -z $config ]] && echo "No config selected" && return
+#
+#   # Open Neovim with the selected config
+#   NVIM_APPNAME=$(basename $config) nvim $@
+# }
+#
 PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"~/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=~/perl5"; export PERL_MM_OPT;
 
-export PATH=$PATH:/usr/local/zig/bin
+# export PATH=$PATH:/usr/local/zig/bin
 export PATH=$PATH:$HOME/.local/bin/
 
 # fuzzy finder
@@ -157,9 +160,6 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 #         echo
 #     }
 # }
-
-source /usr/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # starship
 eval "$(starship init zsh)"
