@@ -113,7 +113,7 @@ dot () {
 
 alias dst="dot status"
 alias da="dot add"
-alias daa="dot add --all"
+alias daa="dot add .config/{kitty,nvim,tmux} .zshrc"
 alias dc="dot commit"
 alias dp="dot push"
 
