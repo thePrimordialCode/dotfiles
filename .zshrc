@@ -75,7 +75,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(z git fzf sudo 
   zsh-autosuggestions 
-  # zsh-autocomplete 
+  zsh-autocomplete 
   zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
