@@ -73,10 +73,17 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(z git fzf sudo 
-  zsh-autosuggestions 
-  zsh-autocomplete 
-  zsh-syntax-highlighting)
+
+plugins=(
+  z
+  git
+  fzf
+  sudo
+  zsh-autosuggestions
+  # zsh-autocomplete
+  zsh-syntax-highlighting
+  zsh-vi-mode
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,13 +120,14 @@ dot () {
 
 alias dst="dot status"
 alias da="dot add"
-alias daa="dot add .config/{kitty,nvim,tmux} .zshrc"
+alias daa="dot add .config/{kitty,nvim,tmux,starship.toml} .zshrc"
 alias dc="dot commit"
 alias dp="dot push"
 
-alias zrc="nvim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 alias tcf="nvim ~/.config/tmux/tmux.conf"
-alias kcf="nvim ~/.config/kitty/kitty.conf"
+alias kc="nvim ~/.config/kitty/kitty.conf"
+alias wcf="nvim ~/.config/wezterm/wezterm.lua"
 
 alias -g b="bat"
 alias -g tt="trash"
@@ -132,6 +140,8 @@ alias -g vi="nvim"
 alias -g vim="nvim"
 alias -g nano="nvim"
 
+alias ls="eza --icons=always"
+
 # vv() {
 #   # Assumes all configs exist in directories named ~/.config/nvim-*
 #   local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
@@ -142,7 +152,7 @@ alias -g nano="nvim"
 #   # Open Neovim with the selected config
 #   NVIM_APPNAME=$(basename $config) nvim $@
 # }
-#
+
 PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
@@ -163,6 +173,9 @@ export FZF_DEFAULT_COMMAND='fd . --hidden --exclude ".git"'
 #         echo
 #     }
 # }
+
+# clifm
+source /usr/share/clifm/functions/cd_on_quit.sh
 
 # starship
 eval "$(starship init zsh)"

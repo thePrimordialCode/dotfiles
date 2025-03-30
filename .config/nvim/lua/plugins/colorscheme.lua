@@ -3,7 +3,11 @@ return {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+      -- transparent = true,
+      borderless_pickers = true,
+      cache = true,
+    },
   },
   -- Configure LazyVim to load dracula
   {

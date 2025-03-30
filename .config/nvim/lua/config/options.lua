@@ -5,3 +5,4 @@
 vim.opt.termguicolors = true -- Ensure true color support
 vim.opt.winblend = 0 -- Disable winblend
 vim.opt.winhighlight = "" -- Clear any winhighlight settings
+vim.opt.autochdir = true

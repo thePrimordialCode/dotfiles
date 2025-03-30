@@ -1,5 +1,5 @@
 add_newline = false
-
+command_timeout = 1000
 [character]
 success_symbol = "[λ](bold grey)"
 error_symbol = "[λ](bold red)"
