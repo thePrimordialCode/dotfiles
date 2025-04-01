@@ -122,6 +122,7 @@ alias dst="dot status"
 alias da="dot add"
 alias daa="dot add ~/{.config/{kitty,nvim,tmux,starship.toml},.zshrc}"
 alias dc="dot commit"
+# alias dc = "dot commit -amend"
 alias dp="dot push"
 
 alias zshrc="nvim ~/.zshrc"
